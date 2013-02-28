@@ -22,5 +22,6 @@ for k in 'suffix prefix dir'.split():
 
 with tempfile.NamedTemporaryFile('w', delete=False, **kw) as fp:
     fp.writelines(fileinput.input(opts.FILES))
+    fp.flush()
 
 print(fp.name)
